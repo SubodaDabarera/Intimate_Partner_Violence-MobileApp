@@ -4,6 +4,8 @@ import {NavigationContainer, StackActions} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // import { Home } from './components/screens/Home';
 import TestingFile from './project_iml/TestingFile';
+import ShareMyExperience from './project_iml/screens/youngUnmarried/ShareMyExperience';
+import ShareMyExperiece2 from './project_iml/screens/youngUnmarried/ShareMyExperience2';
 
 
 const App = () => {
@@ -17,6 +19,8 @@ const App = () => {
         }}>
         {/* <Stack.Screen name="Home" component={Home} /> */}
         <Stack.Screen name="Testing" component={TestingFile} />
+        <Stack.Screen name="ShareMyExperiece" component={ShareMyExperience} />
+        <Stack.Screen name="ShareMyExperiece2" component={ShareMyExperiece2} />
         
       </Stack.Navigator>
     </NavigationContainer>
