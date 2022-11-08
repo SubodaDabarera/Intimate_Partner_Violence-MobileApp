@@ -10,7 +10,7 @@ import {
 import React, {useEffect, useState} from 'react';
 import FirebaseDB from '../../../../components/firebaseConfig';
 import ChatListItem from './ChatListItem';
-
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 // ################ view as a vicim's chat list
 
@@ -113,7 +113,7 @@ const staticChat = [
 const ChatList = ({navigation}) => {
   const [chatList, setChatList] = useState(staticChat);
   const [userId, setUserId] = useState('3f00d10a-4947-4286-afa1-13431dfc5666'); //this is victim userId
-
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     // FirebaseDB
@@ -127,10 +127,26 @@ const ChatList = ({navigation}) => {
         alignItems: 'center',
       }}>
       {/* search - start */}
+
       <View style={styles.Component20}>
         <View style={styles.Group357}>
           {/* add search icon here ------------------------ */}
-          <TextInput placeholder="Search ..." />
+          <View
+            style={{
+              justifyContent: 'center',
+              paddingRight: 6
+            }}>
+            <AntDesign
+              name="search1"
+              style={{
+                fontSize: 22,
+                justifyContent: 'center',
+                alignItems: 'center'
+                // padding: 20,
+              }}
+            />
+          </View>
+          <TextInput placeholder="Search ..." onChangeText={setSearchQuery} />
         </View>
       </View>
       {/* search - end */}
@@ -151,7 +167,6 @@ const ChatList = ({navigation}) => {
               );
           })}
         </View>
-        
       </ScrollView>
     </View>
   );

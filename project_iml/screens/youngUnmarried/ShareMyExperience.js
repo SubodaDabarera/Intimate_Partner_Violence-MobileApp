@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Image,
@@ -7,15 +7,26 @@ import {
   ImageBackground,
   ScrollView,
   TouchableOpacity,
+  TextInput,
 } from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Feather from 'react-native-vector-icons/Feather';
 
-export default function ShareMyExperiece() {
+export default function ShareMyExperiece({navigation}) {
+  const [title, setTitle] = useState('');
+  const [experienceDetails, setExperienceDetails] = useState('');
+
+  const onPublish = () => {
+    console.log(title, experienceDetails);
+  };
+
   return (
     <View>
       <ScrollView>
         <View
           style={{
             alignItems: 'center',
+            marginBottom: 10,
           }}>
           <View style={styles.ShareMyExperiece}>
             <View
@@ -24,10 +35,47 @@ export default function ShareMyExperiece() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
+                marginTop: 10
               }}>
-              <Text>Back</Text>
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <View
+                  style={{
+                    backgroundColor: '#FBE0FF',
+                    padding: 10,
+                    borderRadius: 12,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                  <AntDesign
+                    name="arrowleft"
+                    style={{
+                      fontSize: 20,
+                      color: '#DB01FF',
+                    }}
+                  />
+                </View>
+              </TouchableOpacity>
               <Text style={styles.Txt872}>Share my experience</Text>
-              <Text>Msg</Text>
+              <TouchableOpacity
+              // onPress={() => navigation.goBack()}
+              >
+                <View
+                  style={{
+                    backgroundColor: '#FBE0FF',
+                    padding: 10,
+                    borderRadius: 12,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                  <Feather
+                    name="bell"
+                    style={{
+                      fontSize: 20,
+                      color: '#DB01FF',
+                    }}
+                  />
+                </View>
+              </TouchableOpacity>
             </View>
 
             <Text
@@ -44,13 +92,22 @@ export default function ShareMyExperiece() {
               Share my experience
             </Text>
             <View style={styles.Group998}>
-              <Text style={styles.Txt167}>Title . . .</Text>
+              <TextInput
+                placeholder="Title . . ."
+                onChangeText={setTitle}
+                value={title}
+              />
             </View>
             <View style={styles.Group224}>
-              <Text style={styles.Txt167}>Experience</Text>
+              {/* <Text style={styles.Txt167}>Experience</Text> */}
+              <TextInput
+                placeholder="Experience . . ."
+                onChangeText={setExperienceDetails}
+                value={experienceDetails}
+              />
             </View>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onPublish}>
               <View style={styles.SaveChangesButton}>
                 <Text style={styles.Txt10100}>Publish</Text>
               </View>
@@ -88,16 +145,12 @@ const styles = StyleSheet.create({
   },
 
   Group998: {
-    paddingTop: 23,
-    paddingBottom: 22,
-    paddingLeft: 27,
-    // paddingRight: '70%',
+    paddingVertical: 4,
+    paddingLeft: 25,
     marginBottom: 20,
-
     borderRadius: 15,
     backgroundColor: 'rgba(255, 255, 255, 1)',
     width: '100%',
-    // height: '15%',
   },
   Txt167: {
     fontSize: 14,
@@ -112,12 +165,11 @@ const styles = StyleSheet.create({
   Group224: {
     paddingTop: 16,
     paddingBottom: 143,
-    paddingLeft: 24,
-    // paddingRight: '70%',
+    paddingLeft: 25,
+    paddingRight: 25,
     borderRadius: 15,
     backgroundColor: 'rgba(255, 255, 255, 1)',
     width: '100%',
-    // height: 179,
   },
   Txt167: {
     fontSize: 14,

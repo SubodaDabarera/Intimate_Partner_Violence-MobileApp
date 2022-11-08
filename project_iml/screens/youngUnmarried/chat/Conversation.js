@@ -9,12 +9,17 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import { useNavigation } from '@react-navigation/native';
-// import MaterialCommunityIcons from 'react-native-vector-icons/FontAwesome5Pro'
+import Feather from 'react-native-vector-icons/Feather'
 
 const Conversation = ({route}) => {
   const {chatDetails} = route.params;
   const [expertMessages, setExpertMessages] = useState([]);
   const [victimMessages, setVictimMessages] = useState([]);
+  const [messageInput, setMessageInput] = useState('');
+
+  const onSend = () => {
+    console.log(messageInput)
+  }
 
   const navigation = useNavigation();
 
@@ -186,13 +191,21 @@ const Conversation = ({route}) => {
           alignItems: 'center',
           flexDirection: 'row',
           // backgroundColor: '#E5E5E5'
+          marginBottom: 4
         }}>
         <View
           style={{
             marginRight: 6,
           }}>
           <View style={styles.Rectangle4194}>
-            <Text>Mic</Text>
+            <Feather 
+              name='mic'
+              style = {{
+                fontSize: 23,
+                color: 'white',
+                fontWeight: '100'
+              }}
+            />
           </View>
         </View>
         <View
@@ -200,24 +213,28 @@ const Conversation = ({route}) => {
             alignItems: 'flex-end',
           }}>
           <View style={styles.TextInputRectangle}>
-            <TextInput placeholder="Write now..." />
+            <TextInput placeholder="Write now..." style = {{paddingHorizontal: 12}}
+              onChangeText = {setMessageInput}
+            />
             <TouchableOpacity
               style={{
                 justifyContent: 'center',
-              }}>
+                alignItems: 'center',
+              }}
+              onPress = {onSend}
+              >
               <View
                 style={{
-                  marginRight: 8,
+                  marginRight: 12,
                   justifyContent: 'center',
+                  alignItems: 'center',
                 }}>
-                <Text
-                  style={{
-                    backgroundColor: '#FBE0FF',
-                    padding: 5,
-                    borderRadius: 10,
-                  }}>
-                  Send
-                </Text>
+                <Feather name='send'
+                  style = {{
+                    fontSize: 22,
+                    color: '#DB01FF'
+                  }}
+                />
               </View>
             </TouchableOpacity>
           </View>
@@ -261,6 +278,8 @@ const styles = StyleSheet.create({
     width: 58,
     height: 46,
     borderRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   Frame18: {
     display: 'flex',
