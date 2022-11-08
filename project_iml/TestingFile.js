@@ -21,9 +21,9 @@ const TestingFile = ({navigation}) => {
           width: '48%',
           marginVertical: 14,
         }}
-        onPress={() => navigation.navigate('ShareMyExperiece2')}>
+        onPress={() => navigation.navigate('ChatList')}>
         <View>
-          <Text>Share my experience 2</Text>
+          <Text>Chat list</Text>
         </View>
       </TouchableOpacity>
     </View>
