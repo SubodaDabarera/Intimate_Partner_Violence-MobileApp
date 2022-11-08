@@ -1,226 +1,157 @@
-import * as React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import {
+  StyleSheet,
+  Image,
+  Text,
+  View,
+  ImageBackground,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 
-const FeedBack = () => {
+export default function ShareMyExperiece() {
   return (
-    <View style={styles.feedBackView}>
-      <Image
-        style={styles.groupIcon}
-        resizeMode="cover"
-        // source={require("../assets/group-51.png")}
-      />
-      <Text style={styles.timeText}>19:02</Text>
-      <View style={styles.rectangleView} />
-      <Image
-        style={styles.ellipseIcon}
-        resizeMode="cover"
-        // source={require("../assets/ellipse-2037.png")}
-      />
-      <Image
-        style={styles.ellipseIcon1}
-        resizeMode="cover"
-        // source={require("../assets/ellipse-2037.png")}
-      />
-      <View style={styles.rectangleView1} />
-      <Text style={styles.chickenHellText}>Write Review......</Text>
-      <Text style={styles.order564963}>@DeborahC</Text>
-      <Text style={styles.yourReceivedTheOrder}>
-        Rate your experience with me
-      </Text>
-      <View style={styles.applyButtonView}>
-        <View style={styles.rectangleView2} />
-        <Text style={styles.buttonText}>submit</Text>
-      </View>
-      <View style={styles.unsplashpUhxoSapPFAView} />
-      <View style={styles.component2View}>
-        <Image
-          style={styles.ellipseIcon2}
-          resizeMode="cover"
-        //   source={require("../assets/ellipse-109.png")}
-        />
-        <Image
-          style={styles.subtractIcon}
-          resizeMode="cover"
-        //   source={require("../assets/subtract1.png")}
-        />
-        <Text style={styles.text}>1</Text>
-      </View>
+    <View>
+      <ScrollView>
+        <View
+          style={{
+            alignItems: 'center',
+          }}>
+          <View style={styles.ShareMyExperiece}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%',
+              }}>
+              <Text>Back</Text>
+              <Text style={styles.Txt872}>Share my experience</Text>
+              <Text>Msg</Text>
+            </View>
+
+            <Text
+              style={{
+                fontSize: 25,
+                fontFamily: 'Red Hat Display, sans-serif',
+                fontWeight: '700',
+                letterSpacing: 0.5,
+                color: 'rgba(26,7,0,1)',
+                marginBottom: 36,
+                marginTop: 60,
+                width: '100%',
+              }}>
+              Share my experience
+            </Text>
+            <View style={styles.Group998}>
+              <Text style={styles.Txt167}>Title . . .</Text>
+            </View>
+            <View style={styles.Group224}>
+              <Text style={styles.Txt167}>Experience</Text>
+            </View>
+
+            <TouchableOpacity>
+              <View style={styles.SaveChangesButton}>
+                <Text style={styles.Txt10100}>Publish</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  groupIcon: {
-    position: "absolute",
-    top: 17,
-    right: 35.4,
-    width: 73.6,
-    height: 13,
+  ShareMyExperiece: {
+    display: 'flex',
+    flexDirection: 'column',
+    // justifyContent: 'flex-start',
+    alignItems: 'center',
+    position: 'relative',
+    paddingTop: 14,
+    paddingBottom: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+    backgroundColor: 'rgba(245,245,245,1)',
+    width: '90%',
+    height: '100%',
   },
-  timeText: {
-    position: "absolute",
-    top: 15,
-    left: 35,
+
+  Txt872: {
     fontSize: 18,
-    letterSpacing: -0.4,
-    lineHeight: 18,
-    fontWeight: "600",
-    fontFamily: "SF Pro Display",
-    color: "#000",
-    textAlign: "center",
+    fontFamily: 'Red Hat Display, sans-serif',
+    fontWeight: '600',
+    letterSpacing: 0.36,
+    color: 'rgba(157,150,147,1)',
+    marginRight: 37,
   },
-  rectangleView: {
-    position: "absolute",
-    bottom: 16,
-    left: 139,
-    borderRadius: 50,
-    backgroundColor: "#000",
-    width: 151,
-    height: 5,
-  },
-  ellipseIcon: {
-    position: "absolute",
-    top: 440,
-    left: 334,
-    width: 16,
-    height: 16,
-    display: "none",
-  },
-  ellipseIcon1: {
-    position: "absolute",
-    top: 341,
-    left: 334,
-    width: 16,
-    height: 16,
-    display: "none",
-  },
-  rectangleView1: {
-    position: "absolute",
-    top: 327,
-    left: 35,
+
+  Group998: {
+    paddingTop: 23,
+    paddingBottom: 22,
+    paddingLeft: 27,
+    // paddingRight: '70%',
+    marginBottom: 20,
+
     borderRadius: 15,
-    backgroundColor: "#fff",
-    width: 358,
-    height: 179,
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+    width: '100%',
+    // height: '15%',
   },
-  chickenHellText: {
-    position: "absolute",
-    top: 351,
-    right: 262,
+  Txt167: {
     fontSize: 14,
-    letterSpacing: 0.3,
-    fontWeight: "500",
-    fontFamily: "Red Hat Display",
-    color: "rgba(26, 7, 0, 0.4)",
-    textAlign: "left",
+    fontFamily: 'Red Hat Display, sans-serif',
+    fontWeight: '500',
+    letterSpacing: 0.28,
+    color: 'rgba(157,150,147,1)',
+    width: 96,
+    height: 18,
   },
-  order564963: {
-    position: "absolute",
-    top: 216,
-    right: 289,
-    fontSize: 18,
-    letterSpacing: 0.4,
-    fontWeight: "600",
-    fontFamily: "Red Hat Display",
-    color: "rgba(26, 7, 0, 0.4)",
-    textAlign: "left",
-  },
-  yourReceivedTheOrder: {
-    position: "absolute",
-    top: 177,
-    right: 30,
-    fontSize: 25,
-    letterSpacing: 0.5,
-    fontWeight: "700",
-    fontFamily: "Red Hat Display",
-    color: "#1a0700",
-    textAlign: "left",
-  },
-  rectangleView2: {
-    position: "absolute",
-    height: "100%",
-    width: "100%",
-    top: "0%",
-    right: "0%",
-    bottom: "0%",
-    left: "0%",
+
+  Group224: {
+    paddingTop: 16,
+    paddingBottom: 143,
+    paddingLeft: 24,
+    // paddingRight: '70%',
     borderRadius: 15,
-    backgroundColor: "#db01ff",
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+    width: '100%',
+    // height: 179,
   },
-  buttonText: {
-    position: "absolute",
-    top: "34.85%",
-    left: "41.34%",
+  Txt167: {
+    fontSize: 14,
+    fontFamily: 'Red Hat Display, sans-serif',
+    fontWeight: '500',
+    letterSpacing: 0.28,
+    color: 'rgba(157,150,147,1)',
+    width: 96,
+    height: 18,
+  },
+
+  SaveChangesButton: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // paddingTop: 18.91,
+    // paddingBottom: 14.91,
+    // paddingLeft: 115.91,
+    // paddingRight: 114.91,
+    paddingHorizontal: 115,
+    paddingVertical: 16,
+    borderRadius: 15,
+    backgroundColor: 'rgba(219,1,255,1)',
+    marginTop: 90,
+  },
+  Txt10100: {
     fontSize: 16,
-    letterSpacing: 0.3,
-    textTransform: "uppercase",
-    fontWeight: "600",
-    fontFamily: "Red Hat Display",
-    color: "#fff",
-    textAlign: "center",
-  },
-  applyButtonView: {
-    position: "absolute",
-    height: "7.13%",
-    width: "83.64%",
-    top: "66.85%",
-    right: "8.18%",
-    bottom: "26.03%",
-    left: "8.18%",
-  },
-  unsplashpUhxoSapPFAView: {
-    position: "absolute",
-    height: "5.4%",
-    width: "11.68%",
-    top: "7.02%",
-    right: "8.18%",
-    bottom: "87.58%",
-    left: "80.14%",
-    borderRadius: 15,
-    backgroundColor: "#fbe0ff",
-  },
-  ellipseIcon2: {
-    position: "absolute",
-    height: "52.35%",
-    width: "50.21%",
-    top: "0.33%",
-    right: "0%",
-    bottom: "47.32%",
-    left: "49.79%",
-    maxWidth: "100%",
-    overflow: "hidden",
-    maxHeight: "100%",
-  },
-  subtractIcon: {
-    position: "relative",
-    width: 21.78,
-    height: 24.83,
-  },
-  text: {
-    position: "absolute",
-    top: "4.36%",
-    left: "69.1%",
-    fontSize: 7.5,
-    fontWeight: "700",
-    fontFamily: "Red Hat Display",
-    color: "#fff",
-    textAlign: "left",
-  },
-  component2View: {
-    position: "absolute",
-    top: 77.92,
-    left: 357.11,
-    width: 25.89,
-    height: 24.83,
-  },
-  feedBackView: {
-    position: "relative",
-    backgroundColor: "#f5f5f5",
-    flex: 1,
-    width: "100%",
-    height: 926,
-    overflow: "hidden",
+    fontFamily: 'Red Hat Display, sans-serif',
+    fontWeight: '600',
+    letterSpacing: 0.32,
+    color: 'rgba(255, 255, 255, 1)',
+    textAlign: 'center',
+    justifyContent: 'center',
+    textTransform: 'uppercase',
   },
 });
-
-export default FeedBack;
