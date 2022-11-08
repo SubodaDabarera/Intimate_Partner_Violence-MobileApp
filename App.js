@@ -6,7 +6,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TestingFile from './project_iml/TestingFile';
 import ShareMyExperience from './project_iml/screens/youngUnmarried/ShareMyExperience';
 import ShareMyExperiece2 from './project_iml/screens/youngUnmarried/ShareMyExperience2';
-
+import HomeCounsilor from './project_iml/screens/counsilor/HomeCounsilor';
+import PostBlog from './project_iml/screens/counsilor/PostBlog';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -21,7 +22,8 @@ const App = () => {
         <Stack.Screen name="Testing" component={TestingFile} />
         <Stack.Screen name="ShareMyExperiece" component={ShareMyExperience} />
         <Stack.Screen name="ShareMyExperiece2" component={ShareMyExperiece2} />
-        
+        <Stack.Screen name="HomeCounsilor" component={HomeCounsilor} />
+        <Stack.Screen name="PostBlog" component={PostBlog} />
       </Stack.Navigator>
     </NavigationContainer>
   );

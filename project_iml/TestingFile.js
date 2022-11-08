@@ -4,7 +4,7 @@ import React from 'react';
 const TestingFile = ({navigation}) => {
   return (
     <View>
-      <Text>TestingFile</Text>
+      <Text>TestingFile - Ramath</Text>
 
       <TouchableOpacity
         style={{
@@ -24,6 +24,26 @@ const TestingFile = ({navigation}) => {
         onPress={() => navigation.navigate('ShareMyExperiece2')}>
         <View>
           <Text>Share my experience 2</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('HomeCounsilor')}>
+        <View>
+          <Text>Counsilor Home</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('PostBlog')}>
+        <View>
+          <Text>Post Blog</Text>
         </View>
       </TouchableOpacity>
     </View>
