@@ -2,10 +2,12 @@ import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
 import {NavigationContainer, StackActions} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-// import { Home } from './components/screens/Home';
 import TestingFile from './project_iml/TestingFile';
-import ShareMyExperience from './project_iml/screens/youngUnmarried/ShareMyExperience';
-import ShareMyExperiece2 from './project_iml/screens/youngUnmarried/ShareMyExperience2';
+import ShareMyExperiece from './project_iml/screens/youngUnmarried/ShareMyExperience';
+import ChatList from './project_iml/screens/youngUnmarried/chat/ChatList';
+import Conversation from './project_iml/screens/youngUnmarried/chat/Conversation';
+import ExpertProfile from './project_iml/screens/youngUnmarried/chat/ExpertProfile';
+import RateYourExperience from './project_iml/screens/youngUnmarried/rateYourExperience/RateYourExperience';
 
 
 const App = () => {
@@ -17,10 +19,15 @@ const App = () => {
         screenOptions={{
           headerShown: false,
         }}>
-        {/* <Stack.Screen name="Home" component={Home} /> */}
         <Stack.Screen name="Testing" component={TestingFile} />
-        <Stack.Screen name="ShareMyExperiece" component={ShareMyExperience} />
-        <Stack.Screen name="ShareMyExperiece2" component={ShareMyExperiece2} />
+        
+
+        {/* Unmarried women */}
+        <Stack.Screen name="ChatList" component={ChatList} />
+        <Stack.Screen name="Conversation" component={Conversation} />
+        <Stack.Screen name="ExpertProfile" component={ExpertProfile} />
+        <Stack.Screen name="RateYourExperience" component={RateYourExperience} />
+        <Stack.Screen name="ShareMyExperiece" component={ShareMyExperiece} />
         
       </Stack.Navigator>
     </NavigationContainer>
