@@ -13,6 +13,8 @@ import Conversation from './project_iml/screens/youngUnmarried/chat/Conversation
 import ExpertProfile from './project_iml/screens/youngUnmarried/chat/ExpertProfile';
 import RateYourExperience from './project_iml/screens/youngUnmarried/rateYourExperience/RateYourExperience';
 import BottomNavBar from './project_iml/common/BottomNavBar';
+import EvidenceLog from './project_iml/screens/youngMarried/EvidenceLog';
+import ViewIncident from './project_iml/screens/youngMarried/ViewIncident';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -39,6 +41,11 @@ const App = () => {
             component={RateYourExperience}
           />
           <Stack.Screen name="ShareMyExperiece" component={ShareMyExperiece} />
+
+          {/* Unmarried women */}
+          <Stack.Screen name="EvidenceLog" component={EvidenceLog} />
+          <Stack.Screen name="ViewIncident" component={ViewIncident} />
+
         </Stack.Navigator>
       </NavigationContainer>
       <BottomNavBar />
