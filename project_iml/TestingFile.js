@@ -46,7 +46,67 @@ const TestingFile = ({navigation}) => {
           <Text>Post Blog</Text>
         </View>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('HomePage')}>
+        <View>
+          <Text>Home Page</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('ResouseNumbers')}>
+        <View>
+          <Text>Resouse Numbers Page</Text>
+        </View>
+      </TouchableOpacity>
 
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('AddEmergencyNumber')}>
+        <View>
+          <Text>Add Emergency Number</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('ListOfContacts')}>
+        <View>
+          <Text>List Of Contacts</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('EmergencyHistory')}>
+        <View>
+          <Text>Emergency History</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('HistoryDetail')}>
+        <View>
+          <Text>History Detail</Text>
+        </View>
+      </TouchableOpacity>
       <TouchableOpacity
         style={{
           width: '48%',

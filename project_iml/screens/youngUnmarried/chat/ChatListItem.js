@@ -59,8 +59,7 @@ export default function ChatListItem({chatData}) {
           style={{
             alignItems: 'center',
           }}
-          animationType='fade'
-          >
+          animationType="fade">
           {/* <View style = {{
             backgroundColor: 'white',
             width: '80%',
@@ -92,7 +91,7 @@ export default function ChatListItem({chatData}) {
                     letterSpacing: 0.5,
                     color: 'rgba(26,7,0,1)',
                     marginBottom: 1,
-                    marginTop: 10
+                    marginTop: 10,
                   }}>
                   Deborah Carr
                 </Text>
@@ -169,7 +168,6 @@ export default function ChatListItem({chatData}) {
         </Modal>
       </View>
       {/* modal - end */}
-
     </View>
   );
 }
