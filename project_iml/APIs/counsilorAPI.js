@@ -14,3 +14,33 @@ export const createBlog = async ({title, body}, setIsCreationSuccess) => {
       setIsCreationSuccess(false);
     });
 };
+
+export const viewBlogsList = async setBlogs => {
+  try {
+    await axios.get(`${BACKEND_URL}/blog/getAll/blogs`).then(result => {
+      if (result) {
+        setBlogs(result.data.existingBlogs);
+      } else {
+        setBlogs([]);
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    setBlogs([]);
+  }
+};
+
+export const viewBlogByID = async (blogId, setBlog) => {
+  try {
+    await axios.get(`${BACKEND_URL}/blog/` + blogId).then(result => {
+      if (result) {
+        setBlog(result.data.existingBlog);
+      } else {
+        setBlog([]);
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    setBlog([]);
+  }
+};

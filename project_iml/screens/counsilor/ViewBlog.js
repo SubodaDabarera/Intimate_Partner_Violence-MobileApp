@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   StyleSheet,
   Image,
@@ -16,18 +16,10 @@ import {createBlog} from '../../APIs/counsilorAPI';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 
-export default function PostBlog({navigation}) {
-  const [title, setTitle] = React.useState();
-  const [body, setBody] = React.useState();
-  const [isCreationSuccess, setIsCreationSuccess] = React.useState(false);
-
-  //publish blog api call
-  const PostBlog = async () => {
-    await createBlog({title, body}, setIsCreationSuccess).then(() => {
-      console.log('blog posted');
-      ToastAndroid.show('Blog published', ToastAndroid.SHORT);
-    });
-  };
+export default function ViewBlog({route, navigation}) {
+  const {blogDetails} = route.params;
+  const [title, setTitle] = React.useState(blogDetails.title);
+  const [body, setBody] = React.useState(blogDetails.body);
 
   return (
     <View>
@@ -64,7 +56,7 @@ export default function PostBlog({navigation}) {
                   />
                 </View>
               </TouchableOpacity>
-              <Text style={styles.Txt872}>Post Blog</Text>
+              <Text style={styles.Txt872}>Blog</Text>
               <TouchableOpacity
               // onPress={() => navigation.goBack()}
               >
@@ -87,43 +79,29 @@ export default function PostBlog({navigation}) {
               </TouchableOpacity>
             </View>
 
-            <Text
-              style={{
-                fontSize: 25,
-                fontFamily: 'Red Hat Display, sans-serif',
-                fontWeight: '700',
-                letterSpacing: 0.5,
-                color: 'rgba(26,7,0,1)',
-                marginBottom: 36,
-                marginTop: 60,
-                width: '100%',
-              }}>
-              Post Blog
-            </Text>
-            <View style={styles.Group998}>
-              <TextInput
-                placeholder="Title . . ."
-                onChangeText={setTitle}
-                value={title}
-                multiline
-                maxLength={100}
-              />
-            </View>
+            <Text style={styles.Txt071}>{title}</Text>
+
             <View style={styles.Group224}>
               {/* <Text style={styles.Txt167}>Experience</Text> */}
               <TextInput
-                placeholder="Body . . ."
-                onChangeText={setBody}
+                style={{
+                  fontSize: 14,
+                  fontFamily: 'Red Hat Display, sans-serif',
+                  fontWeight: '500',
+                  letterSpacing: 0.28,
+                  color: 'rgba(0,0,0,1)',
+                }}
                 multiline
+                editable={false}
                 value={body}
               />
             </View>
 
-            <TouchableOpacity onPress={PostBlog}>
+            {/* <TouchableOpacity onPress={PostBlog}>
               <View style={styles.SaveChangesButton}>
                 <Text style={styles.Txt10100}>Publish</Text>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
         </View>
       </ScrollView>
@@ -155,6 +133,18 @@ const styles = StyleSheet.create({
     color: 'rgba(157,150,147,1)',
     marginRight: 37,
   },
+  Txt071: {
+    fontSize: 20,
+    fontFamily: 'Red Hat Display, sans-serif',
+    fontWeight: '700',
+    letterSpacing: 0.4,
+    color: 'rgba(255,1,108,1)',
+    textAlign: 'center',
+    justifyContent: 'center',
+    marginBottom: 36,
+    marginTop: 60,
+    width: '100%',
+  },
 
   Group998: {
     paddingVertical: 4,
@@ -175,6 +165,16 @@ const styles = StyleSheet.create({
   },
 
   Group224: {
+    // position: "absolute",
+    // top: 76,
+    // left: 21,
+    fontSize: 14,
+    fontFamily: 'Red Hat Display, sans-serif',
+    fontWeight: '500',
+    // letterSpacing: 0.28,
+    color: 'rgba(0,0,0,1)',
+    // width: 328,
+    // height: 344,
     paddingTop: 16,
     paddingBottom: 180,
     paddingLeft: 25,

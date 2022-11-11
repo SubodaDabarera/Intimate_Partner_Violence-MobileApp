@@ -19,6 +19,8 @@ import AddEmergencyNumber from './project_iml/screens/oldMarried/AddEmergencyNum
 import ListOfContacts from './project_iml/screens/oldMarried/ListOfContacts';
 import EmergencyHistory from './project_iml/screens/oldMarried/EmergencyHistory';
 import HistoryDetail from './project_iml/screens/oldMarried/HistoryDetail';
+import ViewBlogs from './project_iml/screens/counsilor/ViewBlogs';
+import ViewBlog from './project_iml/screens/counsilor/ViewBlog';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -32,9 +34,12 @@ const App = () => {
           screenOptions={{
             headerShown: false,
           }}>
+          {/* Counsilor */}
           <Stack.Screen name="Testing" component={TestingFile} />
           <Stack.Screen name="HomeCounsilor" component={HomeCounsilor} />
+          <Stack.Screen name="ViewBlogs" component={ViewBlogs} />
           <Stack.Screen name="PostBlog" component={PostBlog} />
+          <Stack.Screen name="ViewBlog" component={ViewBlog} />
 
           {/* Unmarried women */}
           <Stack.Screen name="ChatList" component={ChatList} />

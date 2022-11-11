@@ -107,6 +107,16 @@ const TestingFile = ({navigation}) => {
           <Text>History Detail</Text>
         </View>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('ViewBlogs')}>
+        <View>
+          <Text>View Blogs</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
