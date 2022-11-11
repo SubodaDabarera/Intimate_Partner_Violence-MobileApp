@@ -13,6 +13,8 @@ import Conversation from './project_iml/screens/youngUnmarried/chat/Conversation
 import ExpertProfile from './project_iml/screens/youngUnmarried/chat/ExpertProfile';
 import RateYourExperience from './project_iml/screens/youngUnmarried/rateYourExperience/RateYourExperience';
 import BottomNavBar from './project_iml/common/BottomNavBar';
+import ViewBlogs from './project_iml/screens/counsilor/ViewBlogs';
+import ViewBlog from './project_iml/screens/counsilor/ViewBlog';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -20,15 +22,18 @@ const App = () => {
   return (
     <View style={{flex: 1}}>
       {/* bottom navigation bar */}
-      
+
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
             headerShown: false,
           }}>
+          {/* Counsilor */}
           <Stack.Screen name="Testing" component={TestingFile} />
           <Stack.Screen name="HomeCounsilor" component={HomeCounsilor} />
+          <Stack.Screen name="ViewBlogs" component={ViewBlogs} />
           <Stack.Screen name="PostBlog" component={PostBlog} />
+          <Stack.Screen name="ViewBlog" component={ViewBlog} />
 
           {/* Unmarried women */}
           <Stack.Screen name="ChatList" component={ChatList} />
