@@ -13,6 +13,7 @@ import Conversation from './project_iml/screens/youngUnmarried/chat/Conversation
 import ExpertProfile from './project_iml/screens/youngUnmarried/chat/ExpertProfile';
 import RateYourExperience from './project_iml/screens/youngUnmarried/rateYourExperience/RateYourExperience';
 import BottomNavBar from './project_iml/common/BottomNavBar';
+import EvidenceCollection from './project_iml/screens/youngMarried/EvidenceCollection';
 import EvidenceLog from './project_iml/screens/youngMarried/EvidenceLog';
 import ViewIncident from './project_iml/screens/youngMarried/ViewIncident';
 import DocumentIncident from './project_iml/screens/youngMarried/DocumentIncident';
@@ -47,6 +48,7 @@ const App = () => {
           <Stack.Screen name="EvidenceLog" component={EvidenceLog} />
           <Stack.Screen name="ViewIncident" component={ViewIncident} />
           <Stack.Screen name="DocumentIncident" component={DocumentIncident} />
+          <Stack.Screen name="EvidenceCollection" component={EvidenceCollection} />
 
         </Stack.Navigator>
       </NavigationContainer>

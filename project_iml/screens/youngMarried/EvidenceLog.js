@@ -18,129 +18,34 @@ export default function EvidenceLog({navigation}) {
         </View>
         <ScrollView>
         <View style={styles.ContentBlocks}>
-            <TouchableOpacity
-                onPress={() => navigation.navigate('ViewIncident')}>
-                <View style={styles.Group34902}>
-                    <Image
-                    style={styles.File_dock_duotone_line}
-                    source={{
-                        uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0sxfmfbizpqa-12%3A313?alt=media&token=6f97b8e1-63f7-47a7-ae0a-92b6448a9af8",
-                    }}
-                        />
-                        <View style={styles.ContentContentBlockSmall}>
-                        <View style={styles.Group2110}>
-                            <View style={styles.ContentBlock} />
-                            <View style={styles.Group633}>
-                            <View style={styles.Group411}>
-                                <Text style={styles.Txt231}>Title 1</Text>
-                                <Text style={styles.Txt217}>12/05/2016</Text>
-                            </View>
-                            <Text style={styles.Txt518}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Nunc maximus...
-                            </Text>
-                            </View>
-                        </View>
-                        <View style={styles.DividerLine} />
-                        </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ViewIncident')}>
+            <View style={styles.Group34902}>          
+              <View style={styles.ContentContentBlockSmall}>
+                <View style={styles.Group2110}>
+                    <View style={styles.ContentBlock}>
+                      <Image
+                        style={styles.File_dock_duotone_line}
+                        source={{
+                          uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0sxfmfbizpqa-12%3A313?alt=media&token=6f97b8e1-63f7-47a7-ae0a-92b6448a9af8",
+                        }}
+                      />
                     </View>
-        </TouchableOpacity>
-          <View style={styles.Group34902}>
-            <Image
-              style={styles.File_dock_duotone_line}
-              source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0sxfmfbizpqa-22%3A1392?alt=media&token=717eec10-7744-4e8c-aadf-5635c37acc01",
-              }}
-            />
-            <View style={styles.ContentContentBlockSmall}>
-              <View style={styles.Group2110}>
-                <View style={styles.ContentBlock} />
-                <View style={styles.Group633}>
-                  <View style={styles.Group411}>
-                    <Text style={styles.Txt556}>Title 2</Text>
-                    <Text style={styles.Txt217}>12/05/2016</Text>
-                  </View>
-                  <Text style={styles.Txt518}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc maximus...
-                  </Text>
+                    <View style={styles.Group633}>
+                    <View style={styles.Group411}>
+                        <Text style={styles.Txt231}>Title 1</Text>
+                        <Text style={styles.Txt217}>12/05/2016</Text>
+                    </View>
+                    <Text style={styles.Txt518}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nunc maximus...
+                    </Text>
+                    </View>
                 </View>
+                <View style={styles.DividerLine} />
               </View>
-              <View style={styles.DividerLine} />
             </View>
-          </View>
-          <View style={styles.Group34902}>
-            <Image
-              style={styles.File_dock_duotone_line}
-              source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0sxfmfbizpqa-13%3A319?alt=media&token=af7b5137-d637-41e5-8ca3-a76318ea36a1",
-              }}
-            />
-            <View style={styles.ContentContentBlockSmall}>
-              <View style={styles.Group2110}>
-                <View style={styles.ContentBlock} />
-                <View style={styles.Group633}>
-                  <View style={styles.Group411}>
-                    <Text style={styles.Txt827}>Title 3</Text>
-                    <Text style={styles.Txt217}>12/05/2016</Text>
-                  </View>
-                  <Text style={styles.Txt518}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc maximus...
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.DividerLine} />
-            </View>
-          </View>
-          <View style={styles.Group34902}>
-            <Image
-              style={styles.File_dock_duotone_line}
-              source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0sxfmfbizpqa-22%3A1397?alt=media&token=ff1a58e0-0ae4-4d7b-ba85-438d0cb0dd9d",
-              }}
-            />
-            <View style={styles.ContentContentBlockSmall}>
-              <View style={styles.Group2110}>
-                <View style={styles.ContentBlock} />
-                <View style={styles.Group633}>
-                  <View style={styles.Group411}>
-                    <Text style={styles.Txt827}>Title 4</Text>
-                    <Text style={styles.Txt217}>12/05/2016</Text>
-                  </View>
-                  <Text style={styles.Txt518}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc maximus...
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.DividerLine} />
-            </View>
-          </View>
-          <View style={styles.Group34906}>
-            <Image
-              style={styles.File_dock_duotone_line}
-              source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0sxfmfbizpqa-22%3A1400?alt=media&token=45572bf2-a520-4009-849d-d12d5e2defd3",
-              }}
-            />
-            <View style={styles.ContentContentBlockSmall}>
-              <View style={styles.Group2110}>
-                <View style={styles.ContentBlock} />
-                <View style={styles.Group633}>
-                  <View style={styles.Group411}>
-                    <Text style={styles.Txt556}>Title 5</Text>
-                    <Text style={styles.Txt217}>12/05/2016</Text>
-                  </View>
-                  <Text style={styles.Txt518}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc maximus...
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.DividerLine} />
-            </View>
-          </View>
+          </TouchableOpacity>
         </View>
         </ScrollView>   
       </View>
@@ -264,6 +169,8 @@ const styles = StyleSheet.create({
   },
 
   ContentBlocks: {
+    justifyContent: "center",
+    alignItems: "center",
     display: "flex",
     flexDirection: "column",
     paddingTop: 0,
@@ -284,6 +191,8 @@ const styles = StyleSheet.create({
   File_dock_duotone_line: {
     width: 30,
     height: 30,
+    justifyContent: "center",
+    alignItems: "center",
   },
   ContentContentBlockSmall: {
     display: "flex",
@@ -357,31 +266,10 @@ const styles = StyleSheet.create({
     width: 343,
     height: 77,
   },
-  File_dock_duotone_line: {
-    width: 30,
-    height: 30,
-  },
-  ContentContentBlockSmall: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-end",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 0,
-    paddingRight: 0,
-  },
   Group2110: {
     display: "flex",
     flexDirection: "row",
     marginBottom: 15,
-  },
-  ContentBlock: {
-    backgroundColor: "rgba(246,246,246,1)",
-    width: 50,
-    height: 50,
-    borderRadius: 8,
-    marginRight: 16,
   },
   Group633: {
     display: "flex",
@@ -433,31 +321,10 @@ const styles = StyleSheet.create({
     width: 343,
     height: 77,
   },
-  File_dock_duotone_line: {
-    width: 30,
-    height: 30,
-  },
-  ContentContentBlockSmall: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-end",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 0,
-    paddingRight: 0,
-  },
   Group2110: {
     display: "flex",
     flexDirection: "row",
     marginBottom: 15,
-  },
-  ContentBlock: {
-    backgroundColor: "rgba(246,246,246,1)",
-    width: 50,
-    height: 50,
-    borderRadius: 8,
-    marginRight: 16,
   },
   Group633: {
     display: "flex",
@@ -509,31 +376,10 @@ const styles = StyleSheet.create({
     width: 343,
     height: 77,
   },
-  File_dock_duotone_line: {
-    width: 30,
-    height: 30,
-  },
-  ContentContentBlockSmall: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-end",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 0,
-    paddingRight: 0,
-  },
   Group2110: {
     display: "flex",
     flexDirection: "row",
     marginBottom: 15,
-  },
-  ContentBlock: {
-    backgroundColor: "rgba(246,246,246,1)",
-    width: 50,
-    height: 50,
-    borderRadius: 8,
-    marginRight: 16,
   },
   Group633: {
     display: "flex",
@@ -584,31 +430,10 @@ const styles = StyleSheet.create({
     width: 343,
     height: 77,
   },
-  File_dock_duotone_line: {
-    width: 30,
-    height: 30,
-  },
-  ContentContentBlockSmall: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-end",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 0,
-    paddingRight: 0,
-  },
   Group2110: {
     display: "flex",
     flexDirection: "row",
     marginBottom: 15,
-  },
-  ContentBlock: {
-    backgroundColor: "rgba(246,246,246,1)",
-    width: 50,
-    height: 50,
-    borderRadius: 8,
-    marginRight: 16,
   },
   Group633: {
     display: "flex",
