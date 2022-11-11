@@ -13,6 +13,12 @@ import Conversation from './project_iml/screens/youngUnmarried/chat/Conversation
 import ExpertProfile from './project_iml/screens/youngUnmarried/chat/ExpertProfile';
 import RateYourExperience from './project_iml/screens/youngUnmarried/rateYourExperience/RateYourExperience';
 import BottomNavBar from './project_iml/common/BottomNavBar';
+import HomePage from './project_iml/screens/oldMarried/HomePage';
+import ResouseNumbers from './project_iml/screens/oldMarried/ResouseNumbers';
+import AddEmergencyNumber from './project_iml/screens/oldMarried/AddEmergencyNumber';
+import ListOfContacts from './project_iml/screens/oldMarried/ListOfContacts';
+import EmergencyHistory from './project_iml/screens/oldMarried/EmergencyHistory';
+import HistoryDetail from './project_iml/screens/oldMarried/HistoryDetail';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -20,7 +26,7 @@ const App = () => {
   return (
     <View style={{flex: 1}}>
       {/* bottom navigation bar */}
-      
+
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -34,6 +40,16 @@ const App = () => {
           <Stack.Screen name="ChatList" component={ChatList} />
           <Stack.Screen name="Conversation" component={Conversation} />
           <Stack.Screen name="ExpertProfile" component={ExpertProfile} />
+          <Stack.Screen name="HomePage" component={HomePage} />
+          <Stack.Screen name="ResouseNumbers" component={ResouseNumbers} />
+          <Stack.Screen name="ListOfContacts" component={ListOfContacts} />
+          <Stack.Screen name="EmergencyHistory" component={EmergencyHistory} />
+          <Stack.Screen name="HistoryDetail" component={HistoryDetail} />
+
+          <Stack.Screen
+            name="AddEmergencyNumber"
+            component={AddEmergencyNumber}
+          />
           <Stack.Screen
             name="RateYourExperience"
             component={RateYourExperience}
