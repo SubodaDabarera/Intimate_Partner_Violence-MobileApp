@@ -76,6 +76,16 @@ const TestingFile = ({navigation}) => {
           <Text>Evidence Collection</Text>
         </View>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('ConfirmationModal')}>
+        <View>
+          <Text>ConfirmationModal</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };

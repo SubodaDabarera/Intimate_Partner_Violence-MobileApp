@@ -1,18 +1,53 @@
 import React, { useState } from "react"
-import { StyleSheet, Image, Text, View, ImageBackground, ScrollView, TextInput } from "react-native"
+import DateTimePicker from '@react-native-community/datetimepicker';
+import {useNavigation} from '@react-navigation/native';
+import { StyleSheet, Image, Text, View, ImageBackground, ScrollView, TextInput, TouchableOpacity, Button, SafeAreaView } from "react-native"
+import Modal from 'react-native-modal';
+import ConfirmationModal from './ConfirmationModal';
 
 export default function FormScroll() {
 
   const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [date, setDate] = useState(new Date());
+  const [time, setTime] = useState(new Date(Date.now()));
   const [place, setPlace] = useState('');
   const [description, setDescription] = useState('');
   // const [imgs, setImgs] = useState([]);
 
+  const [datePicker, setDatePicker] = useState(false);
+  const [timePicker, setTimePicker] = useState(false);
+
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [visible, setVisible] = React.useState(false);
+
+  const navigation = useNavigation();
+
   const onSave = () => {
     console.log(title, date, time, place, description);
   };
+
+  function showDatePicker() {
+    setDatePicker(true);
+  };
+
+  function showTimePicker() {
+    setTimePicker(true);
+  };
+
+  function onDateSelected(event, value) {
+    setDate(value);
+    setDatePicker(false);
+  };
+
+  function onTimeSelected(event, value) {
+    setTime(value);
+    setTimePicker(false);
+  };
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
 
   return (
     <View style={styles.FormScroll}>
@@ -32,28 +67,65 @@ export default function FormScroll() {
           <View style={styles.Group34894}>
             <View style={styles.Caption1}>
               <Text style={styles.Txt156}>Date</Text>
-            </View>
-            <View style={styles.Group34891}>
-              <Image
-                style={styles.Calendar_duotone}
-                source={{
-                  uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/d9m2444r8oj-70%3A369?alt=media&token=c063451f-4420-471e-9883-f3e7f1233e4b",
-                }}
-              />
-            </View>
+            </View>                   
+            <View style={styles.InputText}>
+              {/* this should be one row */}
+              <View>
+                {datePicker && (
+                  <DateTimePicker
+                    value={date}
+                    mode={'date'}
+                    display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+                    is24Hour={true}
+                    onChange={onDateSelected}
+                  />
+                )}
+                <Text>{date.toDateString()}</Text>                            
+                {!datePicker && (
+                  <View>              
+                    <TouchableOpacity onPress={showDatePicker}>
+                      <Image
+                        style={styles.Calendar_duotone}
+                        source={{
+                          uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/d9m2444r8oj-70%3A369?alt=media&token=c063451f-4420-471e-9883-f3e7f1233e4b",
+                        }}
+                      />
+                    </TouchableOpacity>
+                  </View>                  
+                )}
+              </View>
+            </View>          
           </View>
           <View style={styles.Group34896}>
-            <Image
-              style={styles.Expand_down}
-              source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/d9m2444r8oj-70%3A381?alt=media&token=48e2c88d-748c-42ba-b9f3-e77ab98216a2",
-              }}
-            />
             <View style={styles.Group10104}>
               <Text style={styles.Txt9010}>Time of incident</Text>
-              <View style={styles.InputText1}>
-                <Text style={styles.Txt261}>time</Text>
+              <View style={styles.InputText}>
+              {/* this should be one row */}
+              <View>
+              {timePicker && (
+                <DateTimePicker
+                  value={time}
+                  mode={'time'}
+                  display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+                  is24Hour={false}
+                  onChange={onTimeSelected}                  
+                />
+              )}
+                <Text>{time.toLocaleTimeString('en-US')}</Text>                       
+                {!timePicker && (              
+                  <View>              
+                    <TouchableOpacity onPress={showTimePicker}>
+                      <Image
+                        style={styles.Calendar_duotone}
+                        source={{
+                          uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/d9m2444r8oj-70%3A369?alt=media&token=c063451f-4420-471e-9883-f3e7f1233e4b",
+                        }}
+                      />
+                    </TouchableOpacity>
+                </View>    
+                )}
               </View>
+            </View>
             </View>
           </View>
           <View style={styles.Group10104}>
@@ -80,23 +152,45 @@ export default function FormScroll() {
           />
         </View>
         <View style={styles.Group34899}>
-          <Image
-            style={styles.Add_round_fill}
-            source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/d9m2444r8oj-70%3A392?alt=media&token=dd050930-36fe-477f-ab9d-17dd6d1e47f5",
-            }}
-          />
+          <TouchableOpacity>
+            <Image
+              style={styles.Add_round_fill}
+              source={{
+                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/d9m2444r8oj-70%3A392?alt=media&token=dd050930-36fe-477f-ab9d-17dd6d1e47f5",
+              }}
+            />
+          </TouchableOpacity>
           <View style={styles.Caption2}>
             <Text style={styles.Txt156}>Add proof of incident</Text>
           </View>
         </View>
         <View style={styles.Group10104}>
-          <View style={styles.ButtonPrimary}>
-            <Text style={styles.Txt634}>SAVE</Text>
-          </View>
-          <Text style={styles.Txt968}>Cancel</Text>
+          <TouchableOpacity onPress={() => {
+            onSave();
+            toggleModal();
+          }}>
+            <View style={styles.ButtonPrimary}>
+              <Text style={styles.Txt634}>SAVE</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('EvidenceCollection')}>
+            <Text style={styles.Txt968}>Cancel</Text>
+          </TouchableOpacity>
         </View>
       </View>
+      {/* modal - start */}
+      <View style={{flex: 1}}>
+        <Modal
+          isVisible={isModalVisible}
+          style={{
+            alignItems: 'center',
+          }}
+          animationType='fade'
+          >    
+          <ConfirmationModal/>
+        </Modal>
+      </View>
+      {/* modal - end */}
     </View>
   )
 }
@@ -153,7 +247,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 13,
     paddingLeft: 15,
-    paddingRight: 295,
+    // paddingRight: 250,
     borderRadius: 8,
     backgroundColor: "white",
     /*  linear-gradient(0deg, rgba(246,246,246,1), rgba(246,246,246,1)),url(https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/d9m2444r8oj-I70%3A373%3B144%3A620?alt=media&token=5ccddcf3-78cd-487f-80f3-9ebb45dc8723) */

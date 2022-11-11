@@ -17,6 +17,7 @@ import EvidenceCollection from './project_iml/screens/youngMarried/EvidenceColle
 import EvidenceLog from './project_iml/screens/youngMarried/EvidenceLog';
 import ViewIncident from './project_iml/screens/youngMarried/ViewIncident';
 import DocumentIncident from './project_iml/screens/youngMarried/DocumentIncident';
+import ConfirmationModal from './project_iml/screens/youngMarried/ConfirmationModal';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -49,6 +50,7 @@ const App = () => {
           <Stack.Screen name="ViewIncident" component={ViewIncident} />
           <Stack.Screen name="DocumentIncident" component={DocumentIncident} />
           <Stack.Screen name="EvidenceCollection" component={EvidenceCollection} />
+          <Stack.Screen name="ConfirmationModal" component={ConfirmationModal} />
 
         </Stack.Navigator>
       </NavigationContainer>
