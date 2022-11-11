@@ -15,6 +15,11 @@ import RateYourExperience from './project_iml/screens/youngUnmarried/rateYourExp
 import BottomNavBar from './project_iml/common/BottomNavBar';
 import ViewBlogs from './project_iml/screens/counsilor/ViewBlogs';
 import ViewBlog from './project_iml/screens/counsilor/ViewBlog';
+import EvidenceCollection from './project_iml/screens/youngMarried/EvidenceCollection';
+import EvidenceLog from './project_iml/screens/youngMarried/EvidenceLog';
+import ViewIncident from './project_iml/screens/youngMarried/ViewIncident';
+import DocumentIncident from './project_iml/screens/youngMarried/DocumentIncident';
+import ConfirmationModal from './project_iml/screens/youngMarried/ConfirmationModal';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -44,6 +49,14 @@ const App = () => {
             component={RateYourExperience}
           />
           <Stack.Screen name="ShareMyExperiece" component={ShareMyExperiece} />
+
+          {/* Young mmarried woman */}
+          <Stack.Screen name="EvidenceLog" component={EvidenceLog} />
+          <Stack.Screen name="ViewIncident" component={ViewIncident} />
+          <Stack.Screen name="DocumentIncident" component={DocumentIncident} />
+          <Stack.Screen name="EvidenceCollection" component={EvidenceCollection} />
+          <Stack.Screen name="ConfirmationModal" component={ConfirmationModal} />
+
         </Stack.Navigator>
       </NavigationContainer>
       <BottomNavBar />

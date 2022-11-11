@@ -57,6 +57,36 @@ const TestingFile = ({navigation}) => {
           <Text>View Blogs</Text>
         </View>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('EvidenceLog')}>
+        <View>
+          <Text>Evidence Log</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('DocumentIncident')}>
+        <View>
+          <Text>Document Incident</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '48%',
+          marginVertical: 14,
+        }}
+        onPress={() => navigation.navigate('EvidenceCollection')}>
+        <View>
+          <Text>Evidence Collection</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
