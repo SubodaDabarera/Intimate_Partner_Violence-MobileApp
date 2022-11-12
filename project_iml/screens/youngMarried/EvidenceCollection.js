@@ -1,114 +1,161 @@
 import React from "react"
 import {useNavigation} from '@react-navigation/native';
 import { StyleSheet, Image, Text, View, ImageBackground, TouchableOpacity } from "react-native"
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Feather from 'react-native-vector-icons/Feather';
 
 export default function EvidenceCollection() {
 
     const navigation = useNavigation();
 
     return (
-        <View style={styles.EvidenceCollection}>
-            <View style={styles.Group34923}>
-                <View style={styles.PageHeader}>
-                <Text style={styles.Txt559}>Evidence Collection</Text>
+        <View style={styles.EvidenceCollection}>            
+            <View style={styles.PageHeader}>                
+                <View
+                    style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: '100%',
+                        marginTop: 10,
+                    }}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <View
+                        style={{
+                            backgroundColor: '#FBE0FF',
+                            padding: 10,
+                            borderRadius: 12,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
+                        <AntDesign
+                            name="arrowleft"
+                            style={{
+                            fontSize: 20,
+                            color: '#DB01FF',
+                            }}
+                        />
+                        </View>
+                    </TouchableOpacity>
+                    <Text style={styles.Txt559}>Evidence Collection</Text>
+                    <TouchableOpacity
+                    // onPress={() => navigation.goBack()}
+                    >
+                        <View
+                        style={{
+                            backgroundColor: '#FBE0FF',
+                            padding: 10,
+                            borderRadius: 12,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
+                        <Feather
+                            name="bell"
+                            style={{
+                            fontSize: 20,
+                            color: '#DB01FF',
+                            }}
+                        />
+                        </View>
+                    </TouchableOpacity>
                 </View>
-                <Text style={styles.Txt1005}>
-                Add new evidence or View Evidence Collected
-                </Text>
-                {/* button row 1 */}
-                <View style={styles.Group350}>
-                    {/* button 1 */}
-                    <View style={styles.Group823}>
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate('DocumentIncident')}
-                            style={styles.roundButton1}>
-                            <Image
-                                style={styles.Camera}
-                                source={{
-                                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A668?alt=media&token=a759a0d4-614d-4129-80eb-cddae5362085",
-                                }}
-                            />
-                        </TouchableOpacity>
-                        <Text style={styles.Txt628}>Take Photo</Text>
-                    </View>
-                    {/* button 2 */}
-                    <View style={styles.Group823}>
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate('DocumentIncident')}
-                            style={styles.roundButton1}>
-                            <Image
-                                style={styles.Camera}
-                                source={{
-                                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A664?alt=media&token=e017e2cd-cf2e-4dbd-ac15-1e5c53a6861b",
-                                }}
-                            />
-                        </TouchableOpacity>
-                        <Text style={styles.Txt628}>Record Voice</Text>
-                    </View>
-                </View>
-                {/* button row 2 */}
-                <View style={styles.Group350}>
-                    {/* button 3 */}
-                    <View style={styles.Group823}>
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate('DocumentIncident')}
-                            style={styles.roundButton1}>
-                            <Image
-                                style={styles.Camera}
-                                source={{
-                                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A646?alt=media&token=0ff9ee26-d4c9-4a6b-9e7a-eeba16db1654",
-                                }}
-                            />
-                        </TouchableOpacity>
-                        <Text style={styles.Txt628}>Upload Image</Text>
-                    </View>
-                    {/* button 4 */}
-                    <View style={styles.Group823}>
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate('DocumentIncident')}
-                            style={styles.roundButton1}>
-                            <Image
-                                style={styles.Camera}
-                                source={{
-                                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A650?alt=media&token=351bcd08-f73f-4581-9ad9-ed7721b638d8",
-                                }}
-                            />
-                        </TouchableOpacity>
-                        <Text style={styles.Txt628}>Document Incident</Text>
-                    </View>
-                </View>
-                {/* button row 3 */}
-                <View style={styles.Group350}>
-                    {/* button 5 */}
-                    <View style={styles.Group823}>
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate('DocumentIncident')}
-                            style={styles.roundButton1}>
-                            <Image
-                                style={styles.Stroke}
-                                source={{
-                                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A655?alt=media&token=1f9ff8e2-33fd-4543-a543-17b7fa625f4d",
-                                }}
-                            />
-                        </TouchableOpacity>
-                        <Text style={styles.Txt628}>Record Video</Text>
-                    </View>
-                    {/* button 6 */}
-                    <View style={styles.Group823}>
-                        <TouchableOpacity
-                            onPress={() => navigation.navigate('EvidenceLog')}
-                            style={styles.roundButton1}>
-                            <Image
-                                style={styles.Camera}
-                                source={{
-                                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A659?alt=media&token=71291b05-0183-433b-b4ab-56e5b52539cd",
-                                }}
-                            />
-                        </TouchableOpacity>
-                        <Text style={styles.Txt628}>View All Evidence</Text>
-                    </View>
-                </View>     
             </View>
+            <Text style={styles.Txt1005}>
+                Add new evidence or View Evidence Collected
+            </Text>
+            {/* button row 1 */}
+            <View style={styles.Group350}>
+                {/* button 1 */}
+                <View style={styles.Group823}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('DocumentIncident')}
+                        style={styles.roundButton1}>
+                        <Image
+                            style={styles.Camera}
+                            source={{
+                                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A668?alt=media&token=a759a0d4-614d-4129-80eb-cddae5362085",
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <Text style={styles.Txt628}>Take Photo</Text>
+                </View>
+                {/* button 2 */}
+                <View style={styles.Group823}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('DocumentIncident')}
+                        style={styles.roundButton1}>
+                        <Image
+                            style={styles.Camera}
+                            source={{
+                                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A664?alt=media&token=e017e2cd-cf2e-4dbd-ac15-1e5c53a6861b",
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <Text style={styles.Txt628}>Record Voice</Text>
+                </View>
+            </View>
+            {/* button row 2 */}
+            <View style={styles.Group350}>
+                {/* button 3 */}
+                <View style={styles.Group823}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('DocumentIncident')}
+                        style={styles.roundButton1}>
+                        <Image
+                            style={styles.Camera}
+                            source={{
+                                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A646?alt=media&token=0ff9ee26-d4c9-4a6b-9e7a-eeba16db1654",
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <Text style={styles.Txt628}>Upload Image</Text>
+                </View>
+                {/* button 4 */}
+                <View style={styles.Group823}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('DocumentIncident')}
+                        style={styles.roundButton1}>
+                        <Image
+                            style={styles.Camera}
+                            source={{
+                                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A650?alt=media&token=351bcd08-f73f-4581-9ad9-ed7721b638d8",
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <Text style={styles.Txt628}>Document Incident</Text>
+                </View>
+            </View>
+            {/* button row 3 */}
+            <View style={styles.Group350}>
+                {/* button 5 */}
+                <View style={styles.Group823}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('DocumentIncident')}
+                        style={styles.roundButton1}>
+                        <Image
+                            style={styles.Stroke}
+                            source={{
+                                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A655?alt=media&token=1f9ff8e2-33fd-4543-a543-17b7fa625f4d",
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <Text style={styles.Txt628}>Record Video</Text>
+                </View>
+                {/* button 6 */}
+                <View style={styles.Group823}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('EvidenceLog')}
+                        style={styles.roundButton1}>
+                        <Image
+                            style={styles.Camera}
+                            source={{
+                                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/wele8puobx-83%3A659?alt=media&token=71291b05-0183-433b-b4ab-56e5b52539cd",
+                            }}
+                        />
+                    </TouchableOpacity>
+                    <Text style={styles.Txt628}>View All Evidence</Text>
+                </View>
+            </View>     
         </View>
     )
 }
@@ -127,17 +174,13 @@ const styles = StyleSheet.create({
     width: 433,
     height: 926,
   },
-  Group34923: {
-    display: "flex",
-    flexDirection: "column",
-  },
   PageHeader: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 0,
-    paddingBottom: 0,
+    paddingBottom: 20,
     paddingLeft: 0,
     paddingRight: 24,
     marginBottom: 5,
@@ -162,7 +205,8 @@ const styles = StyleSheet.create({
   Group350: {
     display: "flex",
     flexDirection: "row",
-    marginBottom: 30,
+    marginBottom: 35,
+    marginRight: 24,
   },
   Group34907: {
     marginRight: 33,

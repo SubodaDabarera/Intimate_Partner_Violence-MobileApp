@@ -1,14 +1,63 @@
 import React from "react"
-import { StyleSheet, Image, Text, View, ImageBackground, ScrollView } from "react-native"
+import { StyleSheet, Image, Text, View, ImageBackground, ScrollView, TouchableOpacity } from "react-native"
 import FormScroll from "./FormScroll"
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Feather from 'react-native-vector-icons/Feather';
 
 export default function DocumentIncident({navigation}) {
   return (
     <ScrollView>
     <View style={styles.DocumentIncident}>
       <View style={styles.Group716}>
-        <View style={styles.PageHeader}>
+        <View style={styles.PageHeader}>          
+          <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '100%',
+            marginTop: 10,
+          }}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <View
+              style={{
+                backgroundColor: '#FBE0FF',
+                padding: 10,
+                borderRadius: 12,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <AntDesign
+                name="arrowleft"
+                style={{
+                  fontSize: 20,
+                  color: '#DB01FF',
+                }}
+              />
+            </View>
+          </TouchableOpacity>
           <Text style={styles.Txt901}>Document Incident</Text>
+          <TouchableOpacity
+          // onPress={() => navigation.goBack()}
+          >
+            <View
+              style={{
+                backgroundColor: '#FBE0FF',
+                padding: 10,
+                borderRadius: 12,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Feather
+                name="bell"
+                style={{
+                  fontSize: 20,
+                  color: '#DB01FF',
+                }}
+              />
+            </View>
+          </TouchableOpacity>
+        </View>
         </View>
         <Text style={styles.Txt554}>
           Enter details of what happened for evidence

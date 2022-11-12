@@ -1,10 +1,15 @@
 import React, {useEffect, useState} from "react"
+import {useNavigation} from '@react-navigation/native';
 import { StyleSheet, Image, Text, View, ScrollView, ImageBackground, TouchableOpacity } from "react-native"
 import {viewAllEvidence, viewBlogsList} from '../../APIs/youngMarriedAPI';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Feather from 'react-native-vector-icons/Feather';
 
-export default function EvidenceLog({navigation}) {
+export default function EvidenceLog() {
 
   const [evidence, setEvidence] = useState([]);
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     async function viewEvidence() {
@@ -20,9 +25,54 @@ export default function EvidenceLog({navigation}) {
     <View style={styles.EvidenceLog}>
       <View style={styles.Group1074}>
         <View style={styles.PageHeader}>
-          <Text style={styles.Txt171}>Back</Text>
-          <Text style={styles.Txt591}>Evidence Log</Text>
-          <Text style={styles.Txt887}>Filter</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              width: '100%',
+              marginTop: 10,
+            }}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <View
+                style={{
+                  backgroundColor: '#FBE0FF',
+                  padding: 10,
+                  borderRadius: 12,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <AntDesign
+                  name="arrowleft"
+                  style={{
+                    fontSize: 20,
+                    color: '#DB01FF',
+                  }}
+                />
+              </View>
+            </TouchableOpacity>
+            <Text style={styles.Txt591}>Evidence Log</Text>
+            <TouchableOpacity
+            // onPress={() => navigation.goBack()}
+            >
+              <View
+                style={{
+                  backgroundColor: '#FBE0FF',
+                  padding: 10,
+                  borderRadius: 12,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <Feather
+                  name="bell"
+                  style={{
+                    fontSize: 20,
+                    color: '#DB01FF',
+                  }}
+                />
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
         <Text style={styles.Txt147}>View list of incidents recorded</Text>
         <View style={styles.Group34921}>
@@ -79,8 +129,8 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     paddingTop: 14,
     paddingBottom: 0,
-    paddingLeft: 0,
-    paddingRight: 4,
+    paddingLeft: 30,
+    paddingRight: 30,
     backgroundColor: "rgba(255, 255, 255, 1)",
     width: 433,
     height: 926,
@@ -90,41 +140,18 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
   },
-  Group10410: {
-    display: "flex",
-    flexDirection: "row",
-    marginBottom: 36,
-  },
-  Txt157: {
-    fontSize: 18,
-    fontFamily: "SF Pro Display, sans-serif",
-    fontWeight: "600",
-    lineHeight: 18,
-    letterSpacing: -0.36,
-    color: "rgba(26,7,0,1)",
-    textAlign: "center",
-    justifyContent: "center",
-    marginRight: 237,
-  },
-  Group5: {
-    width: 73.6,
-    height: 13,
-  },
-
   PageHeader: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
-    marginBottom: 39,
+    paddingTop: 0,
+    paddingBottom: 20,
+    paddingLeft: 0,
+    paddingRight: 24,
+    marginBottom: 5,
   },
-  Txt171: {
-    fontSize: 16,
-    fontFamily: "Inter, sans-serif",
-    fontWeight: "500",
-    color: "rgba(219,1,255,1)",
-    marginRight: 37,
-  },
+
   Txt591: {
     fontSize: 30,
     fontFamily: "Inter, sans-serif",
@@ -132,17 +159,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,0,0,1)",
     textAlign: "center",
     justifyContent: "center",
-    marginRight: 32,
   },
-  Txt887: {
-    fontSize: 16,
-    fontFamily: "Inter, sans-serif",
-    fontWeight: "500",
-    color: "rgba(219,1,255,1)",
-    textAlign: "right",
-    justifyContent: "flex-end",
-  },
-
   Txt147: {
     fontSize: 20,
     fontFamily: "Red Hat Display, sans-serif",
