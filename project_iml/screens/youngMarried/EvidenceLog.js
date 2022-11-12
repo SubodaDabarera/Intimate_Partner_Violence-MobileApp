@@ -1,25 +1,111 @@
 import React, {useEffect, useState} from "react"
 import {useNavigation} from '@react-navigation/native';
-import { StyleSheet, Image, Text, View, ScrollView, ImageBackground, TouchableOpacity } from "react-native"
+import { StyleSheet, Image, Text, View, ScrollView, ImageBackground, TouchableOpacity, TextInput } from "react-native"
 import {viewAllEvidence, viewBlogsList} from '../../APIs/youngMarriedAPI';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 
+
+
+const allEvidence = [
+  {
+    userId: '09309490-9476-4ba7-82eb-41ddef3dd88a',
+    title: 'After work',
+    date: '15/08/2022',
+    time: '06.40 PM',
+    place: 'On the way home',
+    description: 'We had an argument after work that ended in a fight',    
+    proof: [
+      {
+        imgs: ["img1", "img2"]
+      }
+    ],
+  },
+  {
+    userId: '09309490-9476-2212-82eb-41ddef3dd88a',
+    title: 'Argument at home',
+    date: '23/06/2022',
+    time: '10.50 PM',
+    place: 'home',
+    description: 'We had an argument about work',    
+    proof: [
+      {
+        imgs: ["img3", "img4"]
+      }
+    ],
+  },
+  {
+    userId: '09309490-9476-hj89-82eb-41ddef3dd88a',
+    title: 'Fight outside of office',
+    date: '02/09/2022',
+    time: '07.20 PM',
+    place: 'car park outside work',
+    description: 'We had a physical fight outside work when he camme to pick me up',    
+    proof: [
+      {
+        imgs: ["img5", "img6"]
+      }
+    ],
+  },
+  {
+    userId: '09309490-12lp-4ba7-82eb-41ddef3dd88a',
+    title: 'Argument',
+    date: '13/04/2022',
+    time: '09.30 PM',
+    place: 'At home',
+    description: 'We had an argument that ended in a fight',    
+    proof: [
+      {
+        imgs: ["img7", "img8"]
+      }
+    ],
+  },
+  {
+    userId: '09309490-9476-4ba7-30ml-41ddef3dd88a',
+    title: 'Bruises from fight',
+    date: '11/09/2022',
+    time: '11.20 PM',
+    place: 'At home',
+    description: 'I have brisuises on my arm from last night\'s fight',    
+    proof: [
+      {
+        imgs: ["img9", "img10"]
+      }
+    ],
+  },
+  {
+    userId: '09309490-9476-4ba7-78yu-41ddef3dd88a',
+    title: 'threats',
+    date: '17/06/2022',
+    time: '06.40 AM',
+    place: 'On the way to work',
+    description: 'He threatened me with physical abuse',    
+    proof: [
+      {
+        imgs: ["img11", "img12"]
+      }
+    ],
+  },
+];
+
+
+
 export default function EvidenceLog() {
 
-  const [evidence, setEvidence] = useState([]);
+  // const [evidence, setEvidence] = useState([]);
+  const [evidence, setEvidence] = useState(allEvidence);
 
   const navigation = useNavigation();
 
-  useEffect(() => {
-    async function viewEvidence() {
-      await viewBlogsList(setEvidence).then(() => {
-        console.log('Evidence Retrieved');
-        console.log(evidence);
-      });
-    }
-    viewEvidence();
-  }, []);
+  // useEffect(() => {
+  //   async function viewEvidence() {
+  //     await viewBlogsList(setEvidence).then(() => {
+  //       console.log('Evidence Retrieved');
+  //       console.log(evidence);
+  //     });
+  //   }
+  //   viewEvidence();
+  // }, []);
 
   return (
     <View style={styles.EvidenceLog}>
@@ -75,37 +161,57 @@ export default function EvidenceLog() {
           </View>
         </View>
         <Text style={styles.Txt147}>View list of incidents recorded</Text>
-        <View style={styles.Group34921}>
-          <View style={styles.InputSearch}>
-            <Text style={styles.Txt399}>Search</Text>
+        
+        {/* search - start */}
+
+        <View style={styles.Component20}>
+          <View style={styles.Group357}>
+            {/* add search icon here ------------------------ */}
+            <View
+              style={{
+                justifyContent: 'center',
+                paddingRight: 6,
+              }}>
+              <AntDesign
+                name="search1"
+                style={{
+                  fontSize: 22,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  // padding: 20,
+                }}
+              />
+            </View>
+            <TextInput
+              placeholder="Search ..."
+              style={{            
+                width: '100%',            
+              }}
+
+              //   onChangeText={setSearchQuery}
+            />
           </View>
         </View>
+        {/* search - end */}
+        
         <ScrollView>
         <View style={styles.ContentBlocks}>        
-          {evidence.map(incident => {
+        {evidence.map((incident, index) => {
             return (
               <TouchableOpacity
-            onPress={() => navigation.navigate('ViewIncident')}>
-            <View style={styles.Group34902}>          
-              <View style={styles.ContentContentBlockSmall}>
-                <View style={styles.Group2110}>
-                    <View style={styles.ContentBlock}>
-                      <Image
-                        style={styles.File_dock_duotone_line}
-                        source={{
-                          uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0sxfmfbizpqa-12%3A313?alt=media&token=6f97b8e1-63f7-47a7-ae0a-92b6448a9af8",
-                        }}
-                      />
-                    </View>
-                    <View style={styles.Group633}>
-                    <View style={styles.Group411}>
-                        <Text style={styles.Txt231}>Title 1</Text>
-                        <Text style={styles.Txt217}>12/05/2016</Text>
-                    </View>
-                    <Text style={styles.Txt518}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nunc maximus...
-                    </Text>
+                key={index}
+                onPress={() => navigation.navigate('ViewIncident', {incidentData: incident})}>                             
+                <View style={styles.Group34902}>          
+                  <View style={styles.ContentContentBlockSmall}>
+                    <View style={styles.Group2110}>              
+                      <View style={styles.Group633}>
+                      <View style={styles.Group411}>
+                          <Text style={styles.Txt231}>{incident.title}</Text>
+                          <Text style={styles.Txt217}>{incident.date}</Text>
+                      </View>
+                      <Text style={styles.Txt518}>
+                          {incident.description}
+                      </Text>
                     </View>
                 </View>
                 <View style={styles.DividerLine} />
@@ -126,7 +232,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-    alignItems: "flex-start",
+    alignItems: "center",
     paddingTop: 14,
     paddingBottom: 0,
     paddingLeft: 30,
@@ -167,7 +273,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.4,
     color: "rgba(26,7,0,1)",
     width: 366,
-    marginBottom: 37,
+    marginBottom: 15,
     paddingLeft: 20,
   },
   Group34921: {
@@ -196,6 +302,11 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderColor: "rgba(232,232,232,1)",
   },
+  CurvedSearch: {
+    width: 30.3,
+    height: 14.55,
+    marginRight: 13,
+  },
   Txt399: {
     fontSize: 16,
     fontFamily: "Inter, sans-serif",
@@ -204,14 +315,14 @@ const styles = StyleSheet.create({
   },
 
   ContentBlocks: {
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center",
     display: "flex",
     flexDirection: "column",
-    paddingTop: 0,
+    paddingTop: 10,
     paddingBottom: 0,
     paddingLeft: 0,
-    paddingRight: 0,
+    paddingRight: 25,
     marginBottom: 54,
   },
   Group34902: {
@@ -220,8 +331,9 @@ const styles = StyleSheet.create({
     paddingLeft: 0,
     paddingRight: 0,
     marginBottom: 16,
-    width: 343,
-    height: 77,
+    width: "100%",
+    height: 80,
+    alignItems: "center",
   },
   File_dock_duotone_line: {
     width: 30,
@@ -233,7 +345,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-    alignItems: "flex-end",
+    alignItems: "flex-start",
     paddingTop: 0,
     paddingBottom: 0,
     paddingLeft: 0,
@@ -248,6 +360,8 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(246,246,246,1)",
     width: 50,
     height: 50,
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 8,
     marginRight: 16,
   },
@@ -259,23 +373,21 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     marginBottom: 7,
+    // justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    width: "100%",
   },
   Txt231: {
     fontSize: 16,
     fontFamily: "Inter, sans-serif",
     fontWeight: "600",
     color: "rgba(0,0,0,1)",
-    marginRight: 154,
+    // marginRight: 154,
+    position: "absolute",
+    left: 0,
   },
-  Txt217: {
-    fontSize: 14,
-    fontFamily: "Inter, sans-serif",
-    fontWeight: "400",
-    color: "rgba(219,1,255,0.47)",
-    textAlign: "right",
-    justifyContent: "flex-end",
-  },
-
+ 
   Txt518: {
     fontSize: 14,
     fontFamily: "Inter, sans-serif",
@@ -310,11 +422,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
   },
-  Group411: {
-    display: "flex",
-    flexDirection: "row",
-    marginBottom: 7,
-  },
+  
   Txt556: {
     fontSize: 16,
     fontFamily: "Inter, sans-serif",
@@ -322,14 +430,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,0,0,1)",
     marginRight: 152,
   },
-  Txt217: {
-    fontSize: 14,
-    fontFamily: "Inter, sans-serif",
-    fontWeight: "400",
-    color: "rgba(219,1,255,0.47)",
-    textAlign: "right",
-    justifyContent: "flex-end",
-  },
+ 
 
   Txt518: {
     fontSize: 14,
@@ -365,11 +466,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
   },
-  Group411: {
-    display: "flex",
-    flexDirection: "row",
-    marginBottom: 7,
-  },
+ 
   Txt827: {
     fontSize: 16,
     fontFamily: "Inter, sans-serif",
@@ -377,14 +474,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,0,0,1)",
     marginRight: 151,
   },
-  Txt217: {
-    fontSize: 14,
-    fontFamily: "Inter, sans-serif",
-    fontWeight: "400",
-    color: "rgba(219,1,255,0.47)",
-    textAlign: "right",
-    justifyContent: "flex-end",
-  },
+ 
 
   Txt518: {
     fontSize: 14,
@@ -420,11 +510,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
   },
-  Group411: {
-    display: "flex",
-    flexDirection: "row",
-    marginBottom: 7,
-  },
+ 
   Txt827: {
     fontSize: 16,
     fontFamily: "Inter, sans-serif",
@@ -432,14 +518,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,0,0,1)",
     marginRight: 151,
   },
-  Txt217: {
-    fontSize: 14,
-    fontFamily: "Inter, sans-serif",
-    fontWeight: "400",
-    color: "rgba(219,1,255,0.47)",
-    textAlign: "right",
-    justifyContent: "flex-end",
-  },
+  
 
   Txt518: {
     fontSize: 14,
@@ -474,11 +553,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
   },
-  Group411: {
-    display: "flex",
-    flexDirection: "row",
-    marginBottom: 7,
-  },
+
   Txt556: {
     fontSize: 16,
     fontFamily: "Inter, sans-serif",
@@ -491,8 +566,10 @@ const styles = StyleSheet.create({
     fontFamily: "Inter, sans-serif",
     fontWeight: "400",
     color: "rgba(219,1,255,0.47)",
-    textAlign: "right",
-    justifyContent: "flex-end",
+    textAlign: "left",
+    // justifyContent: "flex-end",
+    position: "absolute",
+    right: 0,
   },
 
   Txt518: {
@@ -514,5 +591,30 @@ const styles = StyleSheet.create({
   Group34875: {
     width: 428,
     height: 127,
+  },
+  Component20: {
+    display: 'flex',
+    flexDirection: 'column',
+    borderRadius: 15,
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+    width: '90%',
+    marginTop: 20,
+    marginHorizontal: 5,
+    marginBottom: 20,
+    alignItems: 'center'
+  },
+  Group357: {
+    display: 'flex',
+    flexDirection: 'row',
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 100,
+    backgroundColor: "white",
+    /*  linear-gradient(0deg, rgba(246,246,246,1), rgba(246,246,246,1)),url(https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0sxfmfbizpqa-I22%3A1401%3B144%3A2659?alt=media&token=efa6c176-ed43-4f61-b005-cb9707b226ad) */
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: "rgba(232,232,232,1)",
   },
 })

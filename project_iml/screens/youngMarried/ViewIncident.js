@@ -4,8 +4,9 @@ import { StyleSheet, Image, Text, View, ImageBackground, ScrollView, TouchableOp
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 
-export default function ViewIncident() {
+export default function ViewIncident({route}) {
 
+  const {incidentData} = route.params;
   const navigation = useNavigation();
 
   return (
@@ -73,28 +74,26 @@ export default function ViewIncident() {
             }}>
           <View style={styles.ContentContentBlockSmall}>
             <Text style={styles.Txt313}>Title</Text>
-            <Text style={styles.Txt246}>Lorem ipsum dolor sit amet. </Text>
+            <Text style={styles.Txt246}>{incidentData.title}</Text>
           </View>
           <View style={styles.Group34898}>
             <View style={styles.ContentContentBlockSmall2}>
               <Text style={styles.Txt313}>Date</Text>
-              <Text style={styles.Txt697}>12th May 2016</Text>
+              <Text style={styles.Txt697}>{incidentData.date}</Text>
             </View>
             <View style={styles.ContentContentBlockSmall3}>
               <Text style={styles.Txt313}>Time</Text>
-              <Text style={styles.Txt697}>07.20 PM</Text>
+              <Text style={styles.Txt697}>{incidentData.time}</Text>
             </View>
           </View>
           <View style={styles.ContentContentBlockSmall5}>
             <Text style={styles.Txt313}>Where it took place</Text>
-            <Text style={styles.Txt246}>Lorem ipsum dolor sit amet. </Text>
+            <Text style={styles.Txt246}>{incidentData.place}</Text>
           </View>
           <View style={styles.ContentContentBlockSmall4}>
             <Text style={styles.Txt785}>What happened</Text>
             <Text style={styles.Txt5104}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus,
-              nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem
-              felis nec erat. Aliquam egestas, velit at condimentum
+            {incidentData.description}
             </Text>
           </View>
           <View style={styles.Group34900}>
