@@ -70,7 +70,10 @@ export default function FormScroll() {
             </View>                   
             <View style={styles.InputText}>
               {/* this should be one row */}
-              <View>
+              <View style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                }}>
                 {datePicker && (
                   <DateTimePicker
                     value={date}
@@ -101,7 +104,10 @@ export default function FormScroll() {
               <Text style={styles.Txt9010}>Time of incident</Text>
               <View style={styles.InputText}>
               {/* this should be one row */}
-              <View>
+              <View style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                }}>
               {timePicker && (
                 <DateTimePicker
                   value={time}
@@ -149,6 +155,7 @@ export default function FormScroll() {
             placeholder="description"
             onChangeText={setDescription}
             value={description}
+            multiline
           />
         </View>
         <View style={styles.Group34899}>
@@ -348,10 +355,10 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    paddingTop: 88,
-    paddingBottom: 86,
+    paddingTop: 20,
+    paddingBottom: 20,
     paddingLeft: 15,
-    paddingRight: 237,
+    paddingRight: 15,
     borderRadius: 8,
     backgroundColor: "white",
     /*  linear-gradient(0deg, rgba(246,246,246,1), rgba(246,246,246,1)),url(https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/d9m2444r8oj-I70%3A388%3B144%3A620?alt=media&token=5e512255-5369-47c4-9f51-67f50768a932) */

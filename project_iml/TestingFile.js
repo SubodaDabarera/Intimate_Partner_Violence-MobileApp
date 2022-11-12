@@ -142,7 +142,7 @@ const TestingFile = ({navigation}) => {
           width: '48%',
           marginVertical: 14,
         }}
-        onPress={() => navigation.navigate('EvidenceCollection')}>
+        onPress={() => navigation.navigate('ViewIncident')}>
         <View>
           <Text>Evidence Collection</Text>
         </View>
