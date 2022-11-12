@@ -1,7 +1,21 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import { StyleSheet, Image, Text, View, ScrollView, ImageBackground, TouchableOpacity } from "react-native"
+import {viewAllEvidence, viewBlogsList} from '../../APIs/youngMarriedAPI';
 
 export default function EvidenceLog({navigation}) {
+
+  const [evidence, setEvidence] = useState([]);
+
+  useEffect(() => {
+    async function viewEvidence() {
+      await viewBlogsList(setEvidence).then(() => {
+        console.log('Evidence Retrieved');
+        console.log(evidence);
+      });
+    }
+    viewEvidence();
+  }, []);
+
   return (
     <View style={styles.EvidenceLog}>
       <View style={styles.Group1074}>
@@ -17,8 +31,10 @@ export default function EvidenceLog({navigation}) {
           </View>
         </View>
         <ScrollView>
-        <View style={styles.ContentBlocks}>
-          <TouchableOpacity
+        <View style={styles.ContentBlocks}>        
+          {evidence.map(incident => {
+            return (
+              <TouchableOpacity
             onPress={() => navigation.navigate('ViewIncident')}>
             <View style={styles.Group34902}>          
               <View style={styles.ContentContentBlockSmall}>
@@ -46,6 +62,8 @@ export default function EvidenceLog({navigation}) {
               </View>
             </View>
           </TouchableOpacity>
+            )
+          })}
         </View>
         </ScrollView>   
       </View>
