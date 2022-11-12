@@ -15,6 +15,7 @@ import RateYourExperience from './project_iml/screens/youngUnmarried/rateYourExp
 import BottomNavBar from './project_iml/common/BottomNavBar';
 import ViewBlogs from './project_iml/screens/counsilor/ViewBlogs';
 import ViewBlog from './project_iml/screens/counsilor/ViewBlog';
+import UpdateBlog from './project_iml/screens/counsilor/UpdateBlog';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -34,6 +35,7 @@ const App = () => {
           <Stack.Screen name="ViewBlogs" component={ViewBlogs} />
           <Stack.Screen name="PostBlog" component={PostBlog} />
           <Stack.Screen name="ViewBlog" component={ViewBlog} />
+          <Stack.Screen name="UpdateBlog" component={UpdateBlog} />
 
           {/* Unmarried women */}
           <Stack.Screen name="ChatList" component={ChatList} />
