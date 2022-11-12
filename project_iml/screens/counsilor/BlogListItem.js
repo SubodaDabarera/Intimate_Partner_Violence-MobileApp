@@ -16,8 +16,8 @@ export default function BlogListItem({blogData}) {
   const [isModalVisible, setModalVisible] = useState(false);
   const [visible, setVisible] = React.useState(false);
 
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
+  const clickUpdate = () => {
+    navigation.navigate('UpdateBlog', {blogDetails: blogData});
   };
 
   return (
@@ -32,7 +32,7 @@ export default function BlogListItem({blogData}) {
             <Text style={styles.Txt484}>{blogData.title}</Text>
           </View>
 
-          <TouchableOpacity onPress={() => toggleModal()}>
+          <TouchableOpacity onPress={() => clickUpdate()}>
             <View style={styles.Frame20}>
               <View style={styles.Frame17}>
                 <Text style={styles.Txt694}>Update</Text>
