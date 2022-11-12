@@ -21,6 +21,7 @@ import EmergencyHistory from './project_iml/screens/oldMarried/EmergencyHistory'
 import HistoryDetail from './project_iml/screens/oldMarried/HistoryDetail';
 import ViewBlogs from './project_iml/screens/counsilor/ViewBlogs';
 import ViewBlog from './project_iml/screens/counsilor/ViewBlog';
+import UpdateBlog from './project_iml/screens/counsilor/UpdateBlog';
 import EvidenceCollection from './project_iml/screens/youngMarried/EvidenceCollection';
 import EvidenceLog from './project_iml/screens/youngMarried/EvidenceLog';
 import ViewIncident from './project_iml/screens/youngMarried/ViewIncident';
@@ -45,6 +46,7 @@ const App = () => {
           <Stack.Screen name="ViewBlogs" component={ViewBlogs} />
           <Stack.Screen name="PostBlog" component={PostBlog} />
           <Stack.Screen name="ViewBlog" component={ViewBlog} />
+          <Stack.Screen name="UpdateBlog" component={UpdateBlog} />
 
           {/* Unmarried women */}
           <Stack.Screen name="ChatList" component={ChatList} />
@@ -70,9 +72,14 @@ const App = () => {
           <Stack.Screen name="EvidenceLog" component={EvidenceLog} />
           <Stack.Screen name="ViewIncident" component={ViewIncident} />
           <Stack.Screen name="DocumentIncident" component={DocumentIncident} />
-          <Stack.Screen name="EvidenceCollection" component={EvidenceCollection} />
-          <Stack.Screen name="ConfirmationModal" component={ConfirmationModal} />
-
+          <Stack.Screen
+            name="EvidenceCollection"
+            component={EvidenceCollection}
+          />
+          <Stack.Screen
+            name="ConfirmationModal"
+            component={ConfirmationModal}
+          />
         </Stack.Navigator>
       </NavigationContainer>
       <BottomNavBar />

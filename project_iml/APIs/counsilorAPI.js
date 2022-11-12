@@ -44,3 +44,37 @@ export const viewBlogByID = async (blogId, setBlog) => {
     setBlog([]);
   }
 };
+
+export const update_Blog = async (
+  blogId,
+  {title, body},
+  setIsCreationSuccess,
+) => {
+  const updateBlog = {
+    title,
+    body,
+  };
+
+  try {
+    await axios
+      .put(`${BACKEND_URL}/blog/update/` + blogId, updateBlog)
+      .then(result => {
+        setIsCreationSuccess(result.data.success);
+      });
+  } catch (err) {
+    console.log(err);
+    setIsCreationSuccess(false);
+  }
+};
+
+export const deleteBlog = async blogId => {
+  console.log('deleted', blogId);
+  await axios
+    .delete(`${BACKEND_URL}/blog/delete/` + blogId)
+    .then(() => {
+      console.log('blog deleted');
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};

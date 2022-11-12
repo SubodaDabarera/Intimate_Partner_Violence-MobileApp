@@ -19,6 +19,7 @@ import BlogListItem from './BlogListItem';
 
 export default function ViewBlogs({navigation}) {
   const [blogs, setBlogs] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     async function getBlogs() {
@@ -106,11 +107,7 @@ export default function ViewBlogs({navigation}) {
                 }}
               />
             </View>
-            <TextInput
-              placeholder="Search ..."
-
-              //   onChangeText={setSearchQuery}
-            />
+            <TextInput placeholder="Search ..." onChangeText={setSearch} />
           </View>
         </View>
         {/* search - end */}
@@ -120,16 +117,26 @@ export default function ViewBlogs({navigation}) {
             style={{
               alignItems: 'center',
             }}>
-            {blogs.map((blog, index) => {
-              // if (chat.victimId == userId)
-              return (
-                <>
-                  <BlogListItem key={blog._id} blogData={blog} />
-                  {/* <ChatListItem key={chat.id} chatData={chat} /> */}
-                  {/* <Text>hfgfg</Text> */}
-                </>
-              );
-            })}
+            {blogs
+              .filter(blog => {
+                if (search == '') {
+                  return blog;
+                } else if (
+                  blog.title.toLowerCase().includes(search.toLowerCase())
+                ) {
+                  return blog;
+                }
+              })
+              .map((blog, index) => {
+                // if (chat.victimId == userId)
+                return (
+                  <>
+                    <BlogListItem key={blog._id} blogData={blog} />
+                    {/* <ChatListItem key={chat.id} chatData={chat} /> */}
+                    {/* <Text>hfgfg</Text> */}
+                  </>
+                );
+              })}
           </View>
         </ScrollView>
       </View>
